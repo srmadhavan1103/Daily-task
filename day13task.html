@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center-container{
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+        }
+        .center-box{
+            width: 150px;
+            height: 100px;
+            background-color: steelblue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .horizontal-nav{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #333;
+            padding: 20px;
+            
+        }
+        .horizontel-nav a{
+            color: white;
+            text-decoration: none;
+        }
+        .vertical-nav{
+            display: flex;
+            flex-direction: column;
+            justify-content:space-evenly ;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        .card-container{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .card{
+            flex: 1;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            flex: 1 1 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task 1 Center a box</h2>
+    <div class="center-container">
+        <div class="center-box">Center the box</div>
+    </div>
+    <br><br>
+
+    <h2>Task 2: Horizontal Navigation Bar</h2>
+    <nav class="horizontal-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav>
+    <br><br>
+
+    <h2>Task 3: Vertical Navigation Bar</h2>
+    <nav class="vertical-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav>
+    <br><br>
+
+    <h2>Task 4: Card Layout</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Card 1</h3>
+            <p>Product one</p>
+        </div>
+        <div class="card">
+            <h3>Card 2</h3>
+            <p>Product two</p>
+        </div>
+        <div class="card">
+            <h3>Card 3</h3>
+            <p>Product three</p>
+        </div>
+    </div>
+    <br><br>
+        <h2>Task 5: Card Row with Wrapping</h2>
+        <div class="product-container">
+
+            <div class="product-card">
+                <h3>Product 1</h3>
+                <p>₹500</p>
+            </div>
+
+            <div class="product-card">
+                <h3>Product 2</h3>
+                <p>₹600</p>
+            </div>
+
+            <div class="product-card">
+                <h3>Product 3</h3>
+                <p>₹700</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
