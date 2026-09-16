@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //12.factorial of a given no // 5!=5*4*3*2*1 =120
+        let number=5;
+        let fact=1
+        for(let i=1;i<=number;i++){
+            fact*=i
+        }
+        console.log("Factorial of " +number,fact);
+
+        // 13.find out the given no is prime or not
+        let a=9;
+        for(let i=2;i<a;i++){
+            if(a%i==0){
+                console.log("Not a Prime number");
+                break;
+            }
+            else if(i==a-1){
+                console.log("Prime number");
+            }
+        }
+
+        // 14.print the prime no series
+        let b=20;
+        for(let i=2;i<b;i++){
+            let count=0;
+            for(let j=1;j<=i;j++){
+                if(i%j==0){
+                    count+=1;
+                }
+            }
+            if(count==2){
+                console.log(i);
+            }
+        }
+
+        // 15.find out the given no is Armstrong no or not (153= 1 ^ 3 + 5 ^ 3 + 3 ^ 3 = 153)
+        let arm=153;
+        let c=arm;
+        let ans=0;
+        for(let i=1;i<=3;i++){
+            mod=c%10;
+            ans+=mod**3;
+            c=Math.floor(c/10);
+        }
+        if(arm==ans){
+            console.log("Armstrong number");
+        }
+        else{
+            console.log("Not Armstrong number");
+        }
+
+        // 16.print the Armstrong no series
+        for (let arm = 1; arm <= 20;arm++) {
+            let c = arm;
+            let ans = 0;
+            for (let i = 1; i <= 3; i++) {
+                let mod = c % 10;
+                ans += mod * mod * mod;
+                c = Math.floor(c / 10);
+            }
+            if (arm == ans) {
+                console.log(arm);
+            }
+        }
+
+        // 17.Fibnacie Series(0 1 1 2 3 5 8 13..)
+        let num1=0;
+        let num2=1;
+        for(let i=1;i<=10;i++){
+            console.log(num1);
+            temp=num1+num2;
+            num1=num2;
+            num2=temp;
+        }
+
+        // 18.Print the 5 Table(1 * 5 = 5)
+        let n = 5;
+        for (let i = 1; i <= 10; i++) {
+                console.log(i + " * " + n + " = " + (i * n));
+        }
+
+
+        // 19.Sum of digit(1 + 2 + 3 + ...)
+        let sum=0;
+        let i=123;
+        while(i>0){
+            let mod=i%10;
+            sum+=mod;
+            i=Math.floor(i/10);
+        }
+        console.log(sum);
+
+        // 20.Palindrom or not BAAB,MALAYALAM.MADAM
+        let str="MALAYALAM";
+        let rev="";
+        for(let i=str.length -1;i>=0;i--){
+            rev+=str[i];
+        }
+        if(str==rev){
+            console.log("Palindrome");
+        }
+        else{
+            console.log("Not Palindrome");
+        }
+    </script>
+</body>
+</html>
