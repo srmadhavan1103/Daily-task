@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Use push, pop, shift, unshift on an array.
+        let arr=[10,20,30];
+        console.log(arr);
+
+        arr.push(40);
+        console.log(arr);
+
+        arr.pop();
+        console.log(arr);
+
+        arr.unshift(5);
+        console.log(arr);
+
+        arr.shift();
+        console.log(arr);
+
+        //Print all elements of an array using for loop.
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+
+        //Use map to double all numbers in an array.
+        let arr1=[1,2,3,4,5];
+        let res=arr1.map(function(num){
+            return num*2;
+        });
+        console.log(res);
+
+        //Use filter to get even numbers from an array.
+        let arr2=[1,2,3,4,5,6,7,8]
+        let even=arr2.filter(function(num){
+            return num%2==0;
+        });
+        console.log(even);
+
+        //Use reduce to find the sum of an array.
+        let arr3 = [10, 20, 30, 40];
+        let sum = arr.reduce(function(total, num) {
+            return total + num;
+        }, 0);
+        console.log("Sum =", sum);
+
+        //Find the first number greater than 10.
+        let arr4 = [5, 8, 12, 15, 20];
+        let result = arr.find(function(num) {
+            return num > 10;
+        });
+        console.log(result);
+
+        //Check if array includes a specific value.
+        let arr5 = [10, 20, 30, 40, 50];
+        console.log(arr.includes(30));
+        console.log(arr.includes(60));
+    </script>~
+</body>
+</html>
