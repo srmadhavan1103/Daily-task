@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 1. Employee Class - Input and Display
+class Employee {
+    input(empId, empName, salary) {
+        this.empId = empId;
+        this.empName = empName;
+        this.salary = salary;
+    }
+
+    display() {
+        console.log("Employee ID: " + this.empId);
+        console.log("Employee Name: " + this.empName);
+        console.log("Salary: " + this.salary);
+    }
+}
+
+let emp = new Employee();
+
+emp.input(101, "Madhavan", 50000);
+emp.display();
+
+// 2. Vehicle -> Car -> SportsCar
+
+class Vehicle {
+    constructor(vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    displayVehicle() {
+        console.log("Vehicle Type: " + this.vehicleType);
+    }
+}
+
+class Car extends Vehicle {
+    constructor(vehicleType, brand) {
+        super(vehicleType);
+        this.brand = brand;
+    }
+
+    displayCar() {
+        this.displayVehicle();
+        console.log("Brand: " + this.brand);
+    }
+}
+
+class SportsCar extends Car {
+    constructor(vehicleType, brand, model) {
+        super(vehicleType, brand);
+        this.model = model;
+    }
+
+    displaySportsCar() {
+        this.displayCar();
+        console.log("Model: " + this.model);
+    }
+}
+
+let car = new SportsCar("Car", "BMW", "M4");
+
+car.displaySportsCar();
+
+// 3. Shape -> Rectangle
+
+class Shape {
+    display() {
+        console.log("This is a Shape");
+    }
+}
+
+class Rectangle extends Shape {
+    constructor(length, breadth) {
+        super();
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    area() {
+        console.log("Length: " + this.length);
+        console.log("Breadth: " + this.breadth);
+        console.log("Area: " + (this.length * this.breadth));
+    }
+}
+
+let rect = new Rectangle(10, 5);
+
+rect.display();
+rect.area();
+
+// 4. Account -> SavingsAccount
+
+class Account {
+    constructor(accountNo) {
+        this.accountNo = accountNo;
+    }
+
+    displayAccount() {
+        console.log("Account Number: " + this.accountNo);
+    }
+}
+
+class SavingsAccount extends Account {
+    constructor(accountNo, balance) {
+        super(accountNo);
+        this.balance = balance;
+    }
+
+    displaySavings() {
+        this.displayAccount();
+        console.log("Balance: " + this.balance);
+    }
+}
+
+let account = new SavingsAccount(123456, 25000);
+
+account.displaySavings();
+
+// 5. Device -> Mobile -> SmartPhone
+
+class Device {
+    constructor(deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    displayDevice() {
+        console.log("Device Name: " + this.deviceName);
+    }
+}
+
+class Mobile extends Device {
+    constructor(deviceName, model) {
+        super(deviceName);
+        this.model = model;
+    }
+
+    displayMobile() {
+        this.displayDevice();
+        console.log("Model: " + this.model);
+    }
+}
+
+class SmartPhone extends Mobile {
+    constructor(deviceName, model, os) {
+        super(deviceName, model);
+        this.os = os;
+    }
+
+    displaySmartPhone() {
+        this.displayMobile();
+        console.log("OS: " + this.os);
+    }
+}
+
+let phone = new SmartPhone("Mobile", "Samsung S24", "Android");
+
+phone.displaySmartPhone();
+
+// 6. Area - Method Overloading Simulation
+
+class Area {
+    calculateArea(...values) {
+
+        // Circle
+        if (values.length == 1) {
+            console.log(
+                "Circle Circumference: " + (2 * Math.PI * values[0])
+            );
+        }
+
+        // Rectangle
+        else if (values.length == 2) {
+            console.log(
+                "Rectangle Perimeter: " +
+                (2 * (values[0] + values[1]))
+            );
+        }
+
+        // Square
+        else if (values.length == 4) {
+            console.log(
+                "Square Perimeter: " + (4 * values[0])
+            );
+        }
+    }
+}
+
+let obj = new Area();
+
+obj.calculateArea(5);
+obj.calculateArea(10, 5);
+obj.calculateArea(4, 4, 4, 4);
+
+// 7. Shape - Draw Method Overloading Simulation
+
+class DrawShape {
+
+    draw(...values) {
+
+        // Circle
+        if (values.length == 1) {
+            console.log("Drawing Circle");
+            console.log("Radius: " + values[0]);
+        }
+
+        // Rectangle
+        else if (values.length == 2) {
+            console.log("Drawing Rectangle");
+            console.log("Length: " + values[0]);
+            console.log("Breadth: " + values[1]);
+        }
+
+        // Triangle
+        else if (values.length == 3) {
+            console.log("Drawing Triangle");
+            console.log("Side 1: " + values[0]);
+            console.log("Side 2: " + values[1]);
+            console.log("Side 3: " + values[2]);
+        }
+    }
+}
+
+let shape = new DrawShape();
+
+shape.draw(5);
+shape.draw(10, 20);
+shape.draw(5, 6, 7);
+    </script>
+</body>
+</html>
