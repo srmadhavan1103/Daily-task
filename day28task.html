@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Task 1. Finding Elements by ID Use:getElementById -->
+    <p id="par">Original paragraph</p>
+    <button id="click" onclick="disableButton()">Click</button>
+    <script>
+        let x=document.getElementById("par");
+        par.innerText="New paragraph";
+        function disableButton(){
+            let b=document.getElementById("click");
+            b.ariaDisabled=true;
+        }
+    </script>
+</body>
+</html>
