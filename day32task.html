@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Promise resolves after 2 seconds
+        let p1 = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                resolve("Welcome to Js Promise");
+            }, 2000);
+
+        });
+        p1.then((result) => {
+            console.log(result);
+        });
+
+
+        // 2. Promise rejects after 3 seconds
+
+        let p2 = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                reject("Invalid Data");
+            }, 3000);
+
+        });
+
+        p2.catch((error) => {
+            console.log(error);
+        });
+
+
+        // 3. Check Odd Number
+
+        function checkNumber(num) {
+
+            return new Promise((resolve, reject) => {
+
+                if (num % 2 != 0) {
+                    resolve("Number is Odd");
+                }
+                else {
+                    reject("Number is Even");
+                }
+
+            });
+
+        }
+
+        checkNumber(7)
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+
+        // 4. Employment Eligibility
+
+        let age = 22;
+
+        let p4 = new Promise((resolve, reject) => {
+
+            if (age >= 18) {
+                resolve("Eligible for Employement");
+            }
+            else {
+                reject("Not eligible for Employement");
+            }
+
+        });
+
+        p4.then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+
+        // 5. Sum using Promise
+
+        function Sum(a, b) {
+
+            return new Promise((resolve, reject) => {
+
+                if (b < 0) {
+                    reject("b should not be negative");
+                }
+                else {
+                    resolve(a + b);
+                }
+
+            });
+
+        }
+
+        Sum(10, 20)
+        .then((result) => {
+            console.log("Sum = " + result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+
+        // 6. Food Order
+
+        console.log("Order placed");
+
+        let food = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                resolve("Food is ready");
+            }, 5000);
+
+        });
+
+        food.then((result) => {
+            console.log(result);
+        });
+
+
+        // 7. Check Empty String
+
+        let str = "Hello";
+
+        let p7 = new Promise((resolve, reject) => {
+
+            if (str.length > 0) {
+                resolve("String contains characters");
+            }
+            else {
+                reject("String is empty");
+            }
+
+        });
+
+        p7.then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+
+        // 8. Find Even Number
+
+        function findEven(num) {
+
+            return new Promise((resolve, reject) => {
+
+                if (num % 2 == 0) {
+                    resolve("Number is Even");
+                }
+                else {
+                    reject("Number is Odd");
+                }
+
+            });
+
+        }
+
+        findEven(10)
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+
+        // 9. Promise.all()
+
+        let a = new Promise((resolve) => {
+
+            setTimeout(() => {
+                resolve("Task 1 completed");
+            }, 1000);
+
+        });
+
+        let b = new Promise((resolve) => {
+
+            setTimeout(() => {
+                resolve("Task 2 completed");
+            }, 2000);
+
+        });
+
+        let c = new Promise((resolve) => {
+
+            setTimeout(() => {
+                resolve("Task 3 completed");
+            }, 3000);
+
+        });
+
+        Promise.all([a, b, c])
+        .then((result) => {
+            console.log(result);
+        });
+
+
+        // 10. Promise.race()
+
+        let x = new Promise((resolve) => {
+
+            setTimeout(() => {
+                resolve("Task 1 completed");
+            }, 3000);
+
+        });
+
+        let y = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                reject("Task 2 rejected");
+            }, 1000);
+
+        });
+
+        let z = new Promise((resolve) => {
+
+            setTimeout(() => {
+                resolve("Task 3 completed");
+            }, 2000);
+
+        });
+
+        Promise.race([x, y, z])
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+
+        // Task 1: Basic Async Function
+
+        function wait() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Welcome to Async Await");
+                }, 2000);
+            });
+        }
+        async function test() {
+            let result = await wait();
+            console.log(result);
+        }
+        test();
+
+
+        // Task 2: Get User
+
+        function getUser() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    let user = {
+                        id: 1,
+                        name: "Rahul",
+                        email: "rahul@gmail.com"
+                    };
+                    resolve(user);
+                }, 1500);
+            });
+        }
+        async function userData() {
+            let user = await getUser();
+            console.log("User Name: " + user.name);
+            console.log("Email: " + user.email);
+        }
+        userData();
+
+
+        // Task 3: Login
+
+        async function loginUser(isLoggedIn) {
+            try {
+                if (isLoggedIn == true) {
+                    console.log("Login successful");
+                }
+                else {
+                    throw new Error("Invalid credentials");
+                }
+
+            }
+            catch(error) {
+                console.log(error.message);
+            }
+        }
+        loginUser(false);
+
+
+        // Task 4: Sequential Operations
+        function getOrder() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Order received");
+                }, 1000);
+            });
+        }
+        function processOrder() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Order processed");
+                }, 1000);
+            });
+        }
+        function deliverOrder() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Order delivered");
+                }, 1000);
+            });
+        }
+        async function order() {
+            let a = await getOrder();
+            console.log(a);
+            let b = await processOrder();
+            console.log(b);
+            let c = await deliverOrder();
+            console.log(c);
+
+        }
+
+        order();
+
+
+        // Task 5: Products
+
+        async function products() {
+
+            console.log("Loading products...");
+
+            await new Promise((resolve) => {
+
+                setTimeout(() => {
+                    resolve();
+                }, 2000);
+
+            });
+
+            let product = ["Laptop", "Mobile", "Tablet"];
+
+            console.log(product);
+
+        }
+
+        products();
+    </script>
+</body>
+</html>
