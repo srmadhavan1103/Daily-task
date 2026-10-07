@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[10,20,30,40,50];
+        let [a,,,c]=arr;
+        console.log(a,b,c);
+
+        let arr1=[10,20,30];
+        let[a1, ,b1]=arr;
+        console.log(a,b);
+
+        let arr2=[10,20,30];
+        let [x,...rest]=arr2;
+        console.log(x);
+        console.log(rest);
+
+        const arr3=[1,2,3];
+        const arr4=[4,5,6];
+        console.log(...arr3,...arr4);
+
+        const arr5=[1,2,3];
+        console.log(...arr5);
+
+        let product={
+            id:1,
+            name:Mobile,
+            price:20000
+        };
+        let {name,price}=product;
+        console.log(name);
+        console.log(price);
+
+        let user = { name: "Raj", age: 25 };
+        let {name:fullname}=user;
+        console.log(fullname);
+
+
+        let student = {
+            marks: {
+                math: 95,
+                science: 90
+            }
+        };
+        let{ marks:{math,science}}=student;
+        console.log(math);
+        console.log(science);
+
+
+        function show({ name, age }) {
+            console.log(name);
+            console.log(age);
+        }
+        show({
+            name: "Madhavan",
+            age: 23
+        });
+
+        let arr6 = [10, 20, 30, 40];
+        let [, ...remaining] = arr5;
+        let result = [100, 200, ...remaining];
+        console.log(result);
+
+    </script>
+</body>
+</html>
