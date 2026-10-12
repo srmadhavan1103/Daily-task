@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.Define a class Student with data members rollNo, name, marks
+        class Student{
+            constructor(rollNo,sname,marks){
+                this.rollNo=rollNo;
+                this.sname=sname;
+                this.marks=marks;
+
+            }
+            display(){
+                console.log(`Sudent rollNo: ${this.rollNo} and Student name: ${this.sname} Student mark: ${this.marks}`);
+                }
+        }
+        
+        let s=new Student( 27,"Madhavan",520);
+        s.display();
+
+
+        //2.Create a class Employee with data members empId, empName, designation,salary.
+        class Emp{
+            constructor(empid,empname,des,salary){
+                this.empid=empid;
+                this.empname=empname;
+                this.des=des;
+                this.salary=salary;
+            }
+            display(){
+                 console.log("Employee ID: " + this.empId);
+                    console.log("Employee Name: " + this.empName);
+                    console.log("Designation: " + this.des);
+                    console.log("Salary: " + this.salary);
+            }
+        }
+        let emp1=new Emp(101,"Madhavan","CEO",10000000);
+        emp1.display();
+
+        //3.Create a class Custommer with data members CustomerId, CName, Mobile,Address
+
+        class Custommer{
+            constructor(cusid,cname,mnumber,address){
+                this.cusid=cusid;
+                this.cname=cname;
+                this.mnumber=mnumber;
+                this.address=address;
+            }
+            display(){
+                console.log(`Cusid: ${this.cusid} Customer name: ${this.cname} Custommer number: ${this.mnumber} Customer Address: ${this.address}`);
+                }
+        }
+        
+        let cus=new Custommer( 27,"Madhavan",9864936623,"Chennai");
+        cus.display();
+
+
+        //4.Create a class Staff with data members StaffId, SName, Mobile,,Email,department ,Address
+
+        class staff{
+            constructor(sid,name,mobile,email,dept,address){
+                this.sid=sid;
+                this.name=name;
+                this.mobile=mobile;
+                this.email=email;
+                this.dept=dept;
+                this.address=address;
+            }
+            displaystaff(){
+                console.log(`Staff ID: ${this.sid} and Staff name: ${this.name} Staff Mobile: ${this.mobile}
+                Staff Email: ${this.email} Staff Dept: ${this.dept} Staff Address: ${this.address} `);
+            }
+        }
+        let res=new staff(7,"Madhavan",907408594,"madhavan2@gmail.com","IT","Chennai");
+        res.displaystaff();
+
+    </script>
+</body>
+</html>

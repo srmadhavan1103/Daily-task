@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Factorial(number){
+            let fact=1
+            for(let i=1;i<=number;i++){
+                fact*=i
+            }
+            console.log("Factorial of " +number,fact);
+        }
+        Factorial(5)
+
+        function arm(){
+            let arm=153;
+        let c=arm;
+        let ans=0;
+        for(let i=1;i<=3;i++){
+            mod=c%10;
+            ans+=mod**3;
+            c=Math.floor(c/10);
+        }
+        if(arm==ans){
+            console.log("Armstrong number");
+        }
+        else{
+            console.log("Not Armstrong number");
+        }
+        }
+        arm()
+
+        function fibbonacci(){
+            let num1=0;
+            let num2=1;
+            for(let i=1;i<=10;i++){
+                console.log(num1);
+                temp=num1+num2;
+                num1=num2;
+                num2=temp;
+            }
+        }
+        fibbonacci()
+
+        function palindrome(){
+                let str="MALAYALAM";
+            let rev="";
+            for(let i=str.length -1;i>=0;i--){
+                rev+=str[i];
+            }
+            if(str==rev){
+                console.log("Palindrome");
+            }
+            else{
+                console.log("Not Palindrome");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let feedback={
+            name:"Madhavan",
+            email: "madhavan@gmail.com",
+            reason: "Product Purchase",
+            satisfaction: "5",
+            ease: "Very Easy",
+            quality: "Excellent",
+            support: "Extremely Helpful",
+            recommend: "10",
+            improve: ["Pricing"],
+            comments: "Good product and service"
+        };
+
+        localStorage.setItem("feedback",JSON.stringify(feedback));
+        let store=JSON.parse(localStorage.getItem("feedback"));
+        console.log(store.name);
+        console.log(store.email);
+        console.log(store.reason);
+        console.log(store.satisfaction);
+        console.log(store.ease);
+        console.log(store.quality);
+        console.log(store.support);
+        console.log(store.recommend);
+        console.log(store.improve);
+        console.log(store.comments);
+
+        localStorage.removeItem("feedback");
+        console.log(localStorage.getItem("feedback"));
+
+        localStorage.clear();
+        console.log(localStorage.getItem("feedback"));
+
+        sessionStorage.setItem("feedback",JSON.stringify(feedback));
+        let sessionData=JSON.parse(sessionStorage.getItem("feedback"));
+
+        console.log(sessionData.name);
+        console.log(sessionData.email);
+        console.log(sessionData.reason);
+        console.log(sessionData.satisfaction);
+        console.log(sessionData.ease);
+        console.log(sessionData.quality);
+        console.log(sessionData.support);
+        console.log(sessionData.recommend);
+        console.log(sessionData.improve);
+        console.log(sessionData.comments);
+    </script>
+</body>
+</html>

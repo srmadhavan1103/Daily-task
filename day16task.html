@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 100px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            border: 2px solid gainsboro;
+            transition: backround-color 0,5s;
+        }
+        .box1:hover{
+            background-color: red;
+        }
+
+        .box2{
+            width: 200px;
+            height: 100px;
+            background-color: blueviolet;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            border: 2px solid gainsboro;
+            transition: backround-color 0,5s;
+        }
+        .box2:hover{
+            transform: scale(1.2);
+        }
+
+        .box3{
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            border: 2px solid gainsboro;
+            transition: background-color 0.5s,
+                transform 0.5s,
+                box-shadow 0.5s;
+        }
+        .box1:hover{
+            background-color: purple;
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .reveal-container {
+            width: 250px;
+            height: 150px;
+
+            background-color: lightgray;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .reveal-content {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .reveal-container:hover .reveal-content {
+            opacity: 1;
+        }
+    
+    </style>
+</head>
+<body>
+    <h2>Task 1: Hover Color Change</h2>
+    <div class="box1">
+        Hover Me
+    </div>
+     <h2>Task 2: Grow on Hover</h2>
+
+    <div class="box2">
+        Hover Me
+    </div>
+
+
+    <h2>Task 3: Color, Size & Shadow</h2>
+    <div class="box3">
+        Hover Me
+    </div>
+
+
+    <h2>Task 4: Reveal Content</h2>
+    <div class="reveal-container">
+
+        <div class="reveal-content">
+             Hidden Content!
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cal(a,b,c){
+            c(a,b);
+        }
+        function add(a,b){
+            console.log(a+b);
+        }
+        cal(10,20,add)
+
+
+        function user(name,callback){
+            callback(name);
+        }
+        function welcome(name){
+            console.log(name);
+        }
+        user("Madhavan",welcome)
+
+        function processArray(arr, callback){
+            let result=[];
+            for(let i=0;i<arr.length;i++){
+                result.push(callback(arr[i]));
+            }
+            console.log(result);
+        }
+        function double(num){
+            return num*2;
+        }
+        processArray([1,2,3,4,5],double);
+
+
+        function findNumber(arr, callback) {
+            for (let i = 0; i < arr.length; i++) {
+                if (callback(arr[i])) {
+                    console.log("First even number = " + arr[i]);
+                    break;
+                }
+            }
+        }
+        function isEven(num) {
+            return num % 2 == 0;
+        }
+        findNumber([1, 3, 7, 8, 10], isEven);
+
+
+        function removeNegative(arr, callback) {
+            let result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (callback(arr[i])) {
+                    result.push(arr[i]);
+                }
+            }
+            console.log(result);
+        }
+        function isPositive(num) {
+            return num >= 0;
+        }
+        removeNegative([10, -5, 20, -8, 30, -2], isPositive);
+
+
+        
+        function checkEligibility(age, callback) {
+            callback(age);
+        }
+        function vote(age) {
+            if (age >= 18) {
+                console.log("Eligible to vote");
+            }
+            else {
+                console.log("Not eligible to vote");
+            }
+        }
+        checkEligibility(22, vote);
+    </script>
+</body>
+</html>
