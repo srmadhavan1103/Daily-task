@@ -3,19 +3,23 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
-import Hello from './components/Text1'
-import Text1 from './components/Text1.jsx'
-import Text2 from './components/Text2.jsx'
-
+import Agecheck from './components/Agecheck.jsx'
+import LoginStatus from './components/LoginStatus.jsx'
+import Product from './components/Product.jsx'
+import Result from './components/Result.jsx'
+import Student from './components/Student.jsx'
 
 function App() {
-  return(
-    <div>
-    <Text1 />
-    <Text2 />
-    </div>
 
-  )
+  return(
+  <>
+    <Student/>
+    <LoginStatus/>
+    <Result/>
+    <Product/>
+    <Agecheck/>
+  </>
+  );
 }
   
-export default App
+export default App;
