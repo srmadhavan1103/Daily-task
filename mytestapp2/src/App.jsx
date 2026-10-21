@@ -3,19 +3,44 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
-import Student from './Component/Student'
-
+import Button from './Button.jsx'
+import Card from './Card.jsx'
+import ProfileCard from './ProfileCard.jsx'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <Student name="Madhavan" age={23} course="MCA" />
-      <Student name="Faizal" age={22} course="BE" />
-      <Student name="Mani" age={23} course="Bsc" />
+    <div>
+      <h1>User Profile Cards</h1>
+      <ProfileCard name="Madhavan" age={23} role="Developer">
+        <p>Likes React and JavaScript</p>
+      </ProfileCard>
 
-    </>
+      <ProfileCard name="Vijay" age={52} role="Designer">
+        <p>Enjoys designing websites</p>
+      </ProfileCard>
+
+
+      <h2>Reusable Buttons</h2>
+      <Button color="blue" size="large">
+        Submit
+      </Button>
+      <Button color="green" size="medium">
+        Save
+      </Button>
+
+
+      <h2>Reusable Cards</h2>
+      <Card title="Product">
+        <p>This is a great product</p>
+      </Card>
+       <Card title="About">
+        <p>We build simple and useful applications</p>
+      </Card>
+
+      <Button/>
+      <Card/>
+      <ProfileCard/>
+    </div>
   );
 }
 
-export default App
+export default App;
